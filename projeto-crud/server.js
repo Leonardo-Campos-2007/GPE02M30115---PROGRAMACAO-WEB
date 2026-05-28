@@ -17,6 +17,10 @@ app.get('/', (req, res) => {
   //cd projeto-crud/public/index.html
 })
 
+const apiRouter = require('./routes/api');
+app.use(express.json());
+app.use('/api/users', apiRouter);
+
 app.listen(port, () => {
   console.log(`Servidor funcionando ${port}`)
 })
